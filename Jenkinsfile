@@ -3,6 +3,7 @@
 @Library('jenkinslib') _
 def tools = new org.devops.tools()
 
+hello()
 pipeline{
     //指定运行此流水线的节点
     agent { node { label "master"}}
