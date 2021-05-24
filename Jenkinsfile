@@ -20,7 +20,8 @@ pipeline{
             steps{
                 script{
                     println("获取代码")
-					println("${activeEnv}")
+		    println("${activeEnv}")
+		    tools.PrintMes("获取代码", 'green')
                 }
             }
         }
@@ -28,6 +29,7 @@ pipeline{
             steps{
                 script{
                     println("运行构建")
+		    tools.PrintMes("运行构建", 'green')
                 }
             }
         }
@@ -35,12 +37,12 @@ pipeline{
 		//代码扫描
 		stage("CodeScan"){
 			steps{
-				timeout(time:30, unit:"MINUTES"){
-					script{
-						println("代码扫描")
-						tools.PrintMes("this is my lib!!!")
-					}
+			    timeout(time:30, unit:"MINUTES"){
+				script{
+				    println("代码扫描")
+				    tools.PrintMes("代码扫描", 'green')
 				}
+			    }
 			}
 		}
     }
